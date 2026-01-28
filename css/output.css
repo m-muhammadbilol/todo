@@ -8,17 +8,14 @@
     --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
       "Courier New", monospace;
     --color-amber-300: oklch(87.9% 0.169 91.605);
-    --color-amber-400: oklch(82.8% 0.189 84.429);
-    --color-cyan-500: oklch(71.5% 0.143 215.221);
     --color-blue-500: oklch(62.3% 0.214 259.815);
-    --color-blue-600: oklch(54.6% 0.245 262.881);
+    --color-slate-200: oklch(92.9% 0.013 255.508);
     --color-slate-600: oklch(44.6% 0.043 257.281);
     --color-slate-700: oklch(37.2% 0.044 257.287);
     --color-slate-800: oklch(27.9% 0.041 260.031);
     --color-gray-400: oklch(70.7% 0.022 261.325);
     --color-gray-600: oklch(44.6% 0.03 256.802);
     --color-gray-700: oklch(37.3% 0.034 259.733);
-    --color-gray-800: oklch(27.8% 0.033 256.848);
     --color-black: #000;
     --color-white: #fff;
     --spacing: 0.25rem;
@@ -27,7 +24,6 @@
     --text-xl: 1.25rem;
     --text-xl--line-height: calc(1.75 / 1.25);
     --font-weight-bold: 700;
-    --radius-xl: 0.75rem;
     --radius-2xl: 1rem;
     --ease-out: cubic-bezier(0, 0, 0.2, 1);
     --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
@@ -1586,28 +1582,6 @@
       }
     }
   }
-  .badge {
-    @layer daisyui.l1.l2.l3 {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: calc(0.25rem * 2);
-      border-radius: var(--radius-selector);
-      vertical-align: middle;
-      color: var(--badge-fg);
-      border: var(--border) solid var(--badge-color, var(--color-base-200));
-      font-size: 0.875rem;
-      width: fit-content;
-      background-size: auto, calc(var(--noise) * 100%);
-      background-image: none, var(--fx-noise);
-      background-color: var(--badge-bg);
-      --badge-bg: var(--badge-color, var(--color-base-100));
-      --badge-fg: var(--color-base-content);
-      --size: calc(var(--size-selector, 0.25rem) * 6);
-      height: var(--size);
-      padding-inline: calc(var(--size) / 2 - var(--border));
-    }
-  }
   .card-body {
     @layer daisyui.l1.l2.l3 {
       display: flex;
@@ -1630,9 +1604,6 @@
   .hidden {
     display: none;
   }
-  .inline-block {
-    display: inline-block;
-  }
   .table {
     display: table;
   }
@@ -1644,32 +1615,13 @@
       height: var(--size);
     }
   }
-  .btn-square {
-    @layer daisyui.l1.l2 {
-      padding-inline: calc(0.25rem * 0);
-      width: var(--size);
-      height: var(--size);
-    }
-  }
-  .h-5 {
-    height: calc(var(--spacing) * 5);
-  }
   .loading-xl {
     @layer daisyui.l1.l2 {
       width: calc(var(--size-selector, 0.25rem) * 8);
     }
   }
-  .w-5 {
-    width: calc(var(--spacing) * 5);
-  }
   .w-full {
     width: 100%;
-  }
-  .flex-1 {
-    flex: 1;
-  }
-  .flex-none {
-    flex: none;
   }
   .flex-shrink {
     flex-shrink: 1;
@@ -1788,9 +1740,6 @@
   .mask-repeat {
     mask-repeat: repeat;
   }
-  .stroke-current {
-    stroke: currentcolor;
-  }
   .p-3 {
     padding: calc(var(--spacing) * 3);
   }
@@ -1810,10 +1759,6 @@
     font-size: var(--text-lg);
     line-height: var(--tw-leading, var(--text-lg--line-height));
   }
-  .text-xl {
-    font-size: var(--text-xl);
-    line-height: var(--tw-leading, var(--text-xl--line-height));
-  }
   .text-\[14px\] {
     font-size: 14px;
   }
@@ -1829,9 +1774,6 @@
   .font-bold {
     --tw-font-weight: var(--font-weight-bold);
     font-weight: var(--font-weight-bold);
-  }
-  .text-wrap {
-    text-wrap: wrap;
   }
   .text-amber-300 {
     color: var(--color-amber-300);
@@ -1897,10 +1839,6 @@
     transition-property: color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to, opacity, box-shadow, transform, translate, scale, rotate, filter, -webkit-backdrop-filter, backdrop-filter, display, content-visibility, overlay, pointer-events;
     transition-timing-function: var(--tw-ease, var(--default-transition-timing-function));
     transition-duration: var(--tw-duration, var(--default-transition-duration));
-  }
-  .ease-in-out {
-    --tw-ease: var(--ease-in-out);
-    transition-timing-function: var(--ease-in-out);
   }
   .ease-out {
     --tw-ease: var(--ease-out);
@@ -1999,10 +1937,17 @@
       --btn-fg: var(--color-warning-content);
     }
   }
-  .hover\:bg-blue-500 {
+  .hover\:bg-slate-200 {
     &:hover {
       @media (hover: hover) {
-        background-color: var(--color-blue-500);
+        background-color: var(--color-slate-200);
+      }
+    }
+  }
+  .hover\:bg-slate-600 {
+    &:hover {
+      @media (hover: hover) {
+        background-color: var(--color-slate-600);
       }
     }
   }
